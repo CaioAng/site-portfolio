@@ -1,0 +1,539 @@
+/* BASE: cores, fontes e largura do conteúdo. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #183d34;
+  background-color: #f8f9f4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.container {
+  width: 88%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+::selection {
+  background-color: #d1e3c3;
+  color: #183d34;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+
+a:focus-visible {
+  outline: 3px solid #9b6028;
+  outline-offset: 6px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 64px;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+em {
+  color: #547245;
+}
+
+.texto-maior {
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.link-texto {
+  display: inline-block;
+  padding: 5px 0;
+  text-decoration-thickness: 1px;
+}
+
+.link-texto:hover {
+  color: #436238;
+  text-decoration-thickness: 2px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #224f3f;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.botao:hover {
+  background-color: #35654c;
+}
+
+.botao:active {
+  background-color: #153a2c;
+}
+
+/* CABEÇALHO: o menu fica visível também no celular. */
+.cabecalho {
+  border-bottom: 1px solid #d6dfd2;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+}
+
+.marca {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.marca span {
+  display: block;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+nav a {
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+  border-bottom-color: #224f3f;
+}
+
+nav a[aria-current="page"] {
+  font-weight: bold;
+}
+
+.pular {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  padding: 10px 18px;
+  background-color: #183d34;
+  color: #ffffff;
+}
+
+.pular:focus {
+  top: 10px;
+}
+
+/* INÍCIO: apresentação e seleção dos dois projetos. */
+.apresentacao {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 70px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 64px;
+}
+
+.introducao {
+  max-width: 400px;
+  padding-top: 6px;
+}
+
+.introducao p:first-child {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.titulo-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.titulo-secao h2 {
+  font-size: 30px;
+}
+
+.titulo-secao p {
+  margin-bottom: 0;
+}
+
+.vitrine {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 32px;
+}
+
+.link-capa {
+  display: block;
+  overflow: hidden;
+  background-color: #dce5d5;
+}
+
+.capa {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  transition: transform 0.3s ease-out;
+}
+
+.link-capa:hover .capa {
+  transform: scale(1.025);
+}
+
+.legenda-projeto {
+  padding-top: 18px;
+}
+
+.legenda-projeto h3 a {
+  text-decoration: none;
+}
+
+.legenda-projeto h3 a:hover {
+  text-decoration: underline;
+}
+
+.legenda-projeto p {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #546651;
+}
+
+.nota-imagens {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #546651;
+}
+
+.selecao {
+  padding-bottom: 58px;
+}
+
+.faixa-sobre {
+  background-color: #e7eedf;
+}
+
+.resumo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.resumo h2 {
+  font-size: 48px;
+}
+
+/* SOBRE: apresentação pessoal e ferramentas. */
+.pagina {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.assinatura {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d4639;
+  color: #e4eddc;
+}
+
+.iniciais {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 140px;
+  line-height: 1.2;
+}
+
+.nome-assinatura {
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.biografia h1 {
+  margin-bottom: 26px;
+}
+
+.habilidades {
+  margin-top: 90px;
+}
+
+.linha-habilidade {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 28px;
+  padding: 23px 0;
+  border-top: 1px solid #d6dfd2;
+  align-items: center;
+}
+
+.linha-habilidade h3 {
+  font-size: 23px;
+}
+
+.linha-habilidade ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.convite {
+  margin-top: 65px;
+  padding: 44px;
+  background-color: #e7eedf;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.convite h2 {
+  font-size: 34px;
+}
+
+/* PROJETOS: imagem e explicação lado a lado. */
+.abertura-pagina {
+  max-width: 760px;
+  margin-bottom: 66px;
+}
+
+.abertura-pagina h1 {
+  margin-bottom: 24px;
+}
+
+.projeto-detalhe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+  padding-bottom: 65px;
+  margin-bottom: 65px;
+  border-bottom: 1px solid #d6dfd2;
+  scroll-margin-top: 30px;
+}
+
+figure {
+  margin: 0;
+}
+
+.imagem-projeto {
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #546651;
+}
+
+.texto-projeto h2 {
+  font-size: 48px;
+}
+
+.categoria {
+  color: #546651;
+  margin: 14px 0 24px;
+  font-size: 14px;
+}
+
+.texto-projeto h3 {
+  margin: 28px 0 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.projeto-invertido figure {
+  order: 2;
+}
+
+.link-documentacao {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.fechamento-projetos {
+  text-align: center;
+}
+
+.fechamento-projetos p {
+  margin-bottom: 8px;
+}
+
+/* CONTATO: cada linha é um link completo. */
+.pagina-contato {
+  min-height: 75vh;
+}
+
+.abertura-contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.lista-contatos {
+  border-top: 1px solid #c5d4be;
+}
+
+.contato-linha {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 25px;
+  align-items: center;
+  padding: 28px 16px;
+  border-bottom: 1px solid #c5d4be;
+  text-decoration: none;
+}
+
+.contato-linha:hover {
+  background-color: #e7eedf;
+}
+
+.contato-endereco {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  overflow-wrap: anywhere;
+}
+
+.contato-acao {
+  font-size: 13px;
+  text-decoration: underline;
+  text-align: right;
+}
+
+.nota-contato {
+  margin-top: 18px;
+  color: #546651;
+  font-size: 13px;
+}
+
+/* RODAPÉ. */
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 1px solid #d6dfd2;
+  font-size: 14px;
+}
+
+.rodape p {
+  margin-bottom: 0;
+}
+
+.rodape span {
+  display: block;
+  color: #546651;
+  font-size: 12px;
+}
+
+.rodape a {
+  overflow-wrap: anywhere;
+}
+
+/* TABLETS: reduz os espaços antes de empilhar as colunas. */
+@media (max-width: 1000px) {
+  h1 { font-size: 50px; }
+  .apresentacao, .resumo, .sobre-grid, .projeto-detalhe, .abertura-contato { gap: 40px; }
+  .capa { height: 280px; }
+  .contato-endereco { font-size: 24px; }
+}
+
+/* CELULARES: cada seção passa a ocupar uma coluna. */
+@media (max-width: 700px) {
+  .container { width: 88%; }
+  .menu { flex-direction: column; align-items: flex-start; gap: 20px; }
+  nav { width: 100%; justify-content: space-between; gap: 8px; font-size: 14px; }
+  h1 { font-size: 43px; letter-spacing: -1px; }
+  h2, .resumo h2 { font-size: 36px; }
+  .apresentacao, .vitrine, .resumo, .sobre-grid, .projeto-detalhe, .abertura-contato { grid-template-columns: 1fr; gap: 30px; }
+  .apresentacao { padding-top: 42px; padding-bottom: 40px; }
+  .titulo-secao { flex-direction: column; gap: 10px; }
+  .titulo-secao h2 { font-size: 28px; }
+  .capa { height: auto; }
+  .vitrine { gap: 34px; }
+  .selecao { padding-bottom: 28px; }
+  .resumo { padding-top: 40px; padding-bottom: 40px; }
+  .pagina { padding-top: 42px; padding-bottom: 42px; }
+  .assinatura { min-height: 270px; }
+  .iniciais { font-size: 108px; }
+  .biografia h1 { margin-bottom: 20px; }
+  .habilidades { margin-top: 55px; }
+  .linha-habilidade { grid-template-columns: 1fr; gap: 16px; }
+  .linha-habilidade ul { gap: 10px 24px; }
+  .convite { flex-direction: column; align-items: flex-start; padding: 26px; margin-top: 40px; }
+  .convite h2 { font-size: 28px; }
+  .abertura-pagina { margin-bottom: 40px; }
+  .projeto-detalhe { padding-bottom: 40px; margin-bottom: 40px; }
+  .texto-projeto h2 { font-size: 39px; }
+  .projeto-invertido figure { order: 0; }
+  .contato-linha { grid-template-columns: 1fr; gap: 6px; padding: 22px 8px; }
+  .contato-acao { text-align: left; }
+  .contato-endereco { font-size: 25px; }
+  .rodape { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+/* Respeita quem prefere navegar sem movimento. */
+@media (prefers-reduced-motion: reduce) {
+  .capa, .botao { transition: none; }
+  .link-capa:hover .capa { transform: none; }
+}
